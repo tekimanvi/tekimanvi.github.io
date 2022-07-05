@@ -1,1 +1,0 @@
-# tekimanvi.github.io
