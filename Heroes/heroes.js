@@ -19,3 +19,13 @@ request.responseType = 'json';
 
 //Sending Request 
 request.send();
+
+// The last bit of this section involves waiting for the request load event to be returned from the server.
+
+
+request.onload = function() {            // After the page is loaded
+  const superHeroes = request.response; 
+  populateHeader(superHeroes);
+  showHeroes(superHeroes);
+}
+
