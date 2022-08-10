@@ -16,6 +16,7 @@ let i = 0;
 
 while (i < myflashcards.length)  {
      console.log(myflashcards[i].question);
+     console.log(myflashcards[i].answer;
   
      
    ++i
