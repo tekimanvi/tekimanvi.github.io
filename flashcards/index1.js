@@ -13,20 +13,54 @@ let myflashcards = [
     }]
 
 let i = 0;
-let ques = document.getElementById('q1');
-let ans = document.getElementById('a1');
+let ques = document.getElementById('q');
+let ans = document.getElementById('a');
+let display = document.getElementById('Q');
+let next = document.getElementById('N');
 
+display.addEventListener("click",function(){
+    // display.textContent="changed";
+    ques.innerHTML = a;
+  })
 
-do {
-    ques.innerHTML = myflashcards[i].question;
-    let a = myflashcards[i].answer;
-    ques.addEventListener("click",function() {
-        ans.innerHTML = a;
+let a='';
+let b='';
+
+function update(){
+     a=myflashcards[i].question;
+     b=myflashcards[i].answer;
+}
+
+while (i < myflashcards.length){
+     a=myflashcards[i].question;
+     b=myflashcards[i].answer;
+  
+  display.addEventListener("click",function(){
+    update();
+    ques.innerHTML = a;
+  })
+  
+   ques.addEventListener("click",function(){
+    update();
+    ans.innerHTML = b;
+    i++;
+    console.log(i);
+    
+  })
+ 
+ next.addEventListener("click",function() {
+    // i++;
+    // console.log(i); 
+    // a=myflashcards[i].question;
+     update();     
+     console.log(a);
+     ques.innerHTML = a;
+        ans.innerHTML = '';
+          
     });
+    
+    break;
 
-i++;
-
-} while (i < myflashcards.length)
-
-
-
+ 
+ }
+   
